@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FilterSubMenuComponent implements OnInit {
   @Input() public subMenuItem: any[] = [];
   public iconName: string = 'expand_more';
+  public checkboxState: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -18,5 +19,12 @@ export class FilterSubMenuComponent implements OnInit {
   }
   setActiveClass(listElement: HTMLLIElement): any {
     return listElement.dataset.selected === 'true' ? {"active": true} : {"active": false };
-  } 
+  }
+  
+  checkboxClick(event: Event, liElement: HTMLLIElement) {
+    this.checkboxState = this.checkboxStat === false ? true : false;
+    if (this.checkboxState === true || liElement.dataset.selected === 'true') {
+      event.stopPropagation();
+    }
+  }
 }
