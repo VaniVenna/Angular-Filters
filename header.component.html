@@ -1,0 +1,15 @@
+<div class="header layout horizontal center even-space">
+    <p class="pageHeader">{{pageHeader}}</p>
+    <ul class="navBar layout horizontal center">
+        <!-- <li><a href="/">home</a></li>
+        <li><a href="/about">about</a></li>
+        <li><a href="/characters">characters</a></li>
+        <li><a href="/toys-games">toys-games</a></li> -->
+        <li *ngFor="let item of menuItems; index as i">
+            <a *ngIf="item.name !== 'home'; else homeLink" routerLink="/{{item.name}}" routerLinkActive="active"> {{item.text}}</a>
+            <ng-template #homeLink>
+                <a routerLink="/" routerLinkActive="active"> {{item.text}}</a>
+            </ng-template>
+        </li>
+    </ul>
+</div>

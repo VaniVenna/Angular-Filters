@@ -1,0 +1,35 @@
+<div class="pipes">
+    <div class="built-in">
+        <div class="pipe">
+            <h3> currency </h3>
+            <p> {{20 | currency:'GBP'}} </p>
+        </div>
+        <div class="pipe">
+            <h3> Date </h3>
+            <p> {{'short' | uppercase}} : {{today | date:'short'}} </p>
+            <p> medium : {{today | date:'medium'}} </p>
+            <p> long : {{today | date:'long'}} </p>
+            <p> full : {{today | date:'full'}} </p>
+            <p> short Date : {{today | date:'shortDate'}} </p>
+            <p> medium Date : {{today | date:'mediumDate'}} </p>
+            <p> short Time : {{today | date:'shortTime'}} </p>
+            <p> long Time : {{today | date:'longTime'}} </p>
+        </div>
+        <div class="pipe">
+            <h3> Decimal </h3>
+            <p> {{10.57869 | number: '4.2-2'}} </p>
+        </div>
+    </div>
+    <div class="custom-pipes">
+        <div class="pipe">
+            <h3> Pixel Pipe </h3>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk-c8LoEcQ3eSEXMayrG9j5qyOkNU6clu_KQ&usqp=CAU"
+            [style.height]="200 | pixel" [style.width]="200 | pixel" [attr.data-height]="unit" [attr.data-width]="unit">
+        </div>
+        <div class="pipe">
+            <h3> Percentage Pipe </h3>
+            <img [attr.src]="imageURL | defaultImage"
+            [style.height]="50 | percentage" [style.width]="50 | percentage">
+        </div>
+    </div>
+</div>
