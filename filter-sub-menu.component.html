@@ -4,7 +4,7 @@
          [ngClass]="setActiveClass(listElement)" 
          (click)="menuToggle($event, listElement)" 
          [attr.data-selected]="false">
-            <input type="checkbox"> {{subItem.name}}
+            <input type="checkbox" (click)="checkboxClick($event, liElement)" checked="checkedState"> {{subItem.name}}
             <mat-icon 
             *ngIf="subItem.subMenu && subItem.subMenu.length > 0"
             aria-hidden="false" 
