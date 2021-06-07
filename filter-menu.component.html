@@ -1,7 +1,7 @@
 <ul class="main-brand">
     <ng-container *ngFor="let menuItem of filterMenu">
         <li #listElement (click)="menuToggle($event, listElement)" [ngClass]="setActiveClass(listElement)" [attr.data-selected]="false">
-            <input type="checkbox"> {{menuItem.name}}
+            <input type="checkbox" (click)="checkboxClick($event, liElement)" checked="checkedState"> {{menuItem.name}}
             <mat-icon 
              *ngIf="menuItem.subMenu && menuItem.subMenu.length > 0" 
               aria-hidden="false" 
