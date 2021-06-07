@@ -1,0 +1,14 @@
+.main-brand {
+    list-style: none;
+}
+// li[data-selected = 'true'] .sub-menu {
+//     display: block;
+// }
+::ng-deep {
+    .sub-menu {
+        display: none;
+    }
+    .active + .sub-menu-comp > ul {
+        display: block;
+    }
+}

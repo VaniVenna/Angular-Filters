@@ -1,0 +1,19 @@
+<div class="product-container layout vertical justified">
+    <div class="product-details layout flex-12 wrap">
+        <ng-container *ngFor="let item of productDetail">
+            <app-product-info [productInfo]="item"></app-product-info>
+        </ng-container>
+    </div>
+    <div class="pagination layout center-center">
+        <div *ngIf="showPaginator === true; else loadMore">
+            <ul class="paginator layout ">
+                <li class="prev"><mat-icon>chevron_left</mat-icon></li>
+                <li *ngFor="let number of iterator; index as i">{{i+1}}</li>
+                <li class="next"><mat-icon>chevron_right</mat-icon></li>
+            </ul>
+        </div>
+        <ng-template #loadMore>
+            <div class="">Load More</div>
+        </ng-template>
+    </div>
+</div>

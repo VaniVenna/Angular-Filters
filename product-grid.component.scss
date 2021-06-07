@@ -1,0 +1,15 @@
+.product-container {
+    height: 100%;
+    .pagination {
+        height: 50px;
+        .paginator {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+                margin: 0 0.5vw;
+                cursor: pointer;
+            }
+        }
+    }
+}

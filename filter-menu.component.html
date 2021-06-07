@@ -1,0 +1,18 @@
+<ul class="main-brand">
+    <ng-container *ngFor="let menuItem of filterMenu">
+        <li #listElement (click)="menuToggle($event, listElement)" [ngClass]="setActiveClass(listElement)" [attr.data-selected]="false">
+            <input type="checkbox"> {{menuItem.name}}
+            <mat-icon 
+             *ngIf="menuItem.subMenu && menuItem.subMenu.length > 0" 
+              aria-hidden="false" 
+              aria-label="Example home icon" 
+              class="material-icons">
+                {{iconName}}
+            </mat-icon>
+        </li>
+        <app-filter-sub-menu class="sub-menu-comp"
+         *ngIf="menuItem.subMenu && menuItem.subMenu.length > 0"
+         [subMenuItem]="menuItem.subMenu"
+        ></app-filter-sub-menu>
+    </ng-container>
+</ul>

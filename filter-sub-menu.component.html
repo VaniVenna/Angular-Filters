@@ -1,0 +1,22 @@
+<ul class="sub-menu">
+    <ng-container *ngFor="let subItem of subMenuItem">
+        <li #listElement 
+         [ngClass]="setActiveClass(listElement)" 
+         (click)="menuToggle($event, listElement)" 
+         [attr.data-selected]="false">
+            <input type="checkbox"> {{subItem.name}}
+            <mat-icon 
+            *ngIf="subItem.subMenu && subItem.subMenu.length > 0"
+            aria-hidden="false" 
+            aria-label="Example home icon" 
+            class="material-icons"
+            class="{{'material-icons' | uppercase}}">
+                {{iconName}}
+            </mat-icon>
+        </li>
+        <app-filter-sub-menu class="sub-menu-comp"
+        *ngIf="subItem.subMenu && subItem.subMenu.length > 0"
+        [subMenuItem]="subItem.subMenu"
+        ></app-filter-sub-menu>
+    </ng-container>
+</ul>
