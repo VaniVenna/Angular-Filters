@@ -80,7 +80,7 @@ export class FilterMenuComponent implements OnInit {
     return listElement.dataset.selected === 'true' ? {"active": true} : {"active": false}
   }
   checkboxClick(event: Event, liElement: HTMLLIElement) {
-    this.checkboxState = this.checkboxStat === false ? true : false;
+    this.checkboxState = !this.checkboxState;
     if (this.checkboxState === true || liElement.dataset.selected === 'true') {
       event.stopPropagation();
     }
