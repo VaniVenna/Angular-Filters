@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FilterMenuComponent implements OnInit {
   public iconName: string = 'expand_more';
   public activeClass: string = "";
+  public checkboxState: boolean = false;
   public filterMenu: any[] = [{
       name: 'Hasbro Games',
       id: 1,
@@ -77,5 +78,11 @@ export class FilterMenuComponent implements OnInit {
   }
   setActiveClass(listElement: HTMLLIElement): any {
     return listElement.dataset.selected === 'true' ? {"active": true} : {"active": false}
+  }
+  checkboxClick(event: Event, liElement: HTMLLIElement) {
+    this.checkboxState = this.checkboxStat === false ? true : false;
+    if (this.checkboxState === true || liElement.dataset.selected === 'true') {
+      event.stopPropagation();
+    }
   }
 }
