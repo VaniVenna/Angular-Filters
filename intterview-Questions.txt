@@ -1,0 +1,79 @@
+null,
+undefined
+0
+false
+NaN
+''
+
+== ===
+
+if( 1 == '1') => true
+if( 1 === '1') => false
+
+console.log(0.1 + 0.2) => 0.3
+console.log(0.1 + 0.2 == 0.3) => true
+
+console.log(NaN === NaN) => true, since NaN itself is false
+
+isNAN(1) => false
+isNAN('1') => true
+
+typeof NAN; => "object"->(number)
+anagrams -> string
+stop, post
+
+let firstWord = 'stop';
+let secondWord = 'post';
+
+let anagram = (firstWord, secondWord) => {
+firstWord.every(secondWord);
+}
+
+(function(){
+let x = y = 100;
+
+let x = y;
+y = 100;
+})();
+
+console.log(y);
+
+5
+5.0 interger
+if(5.0 % 1) = 0
+
+let vani = new Object();
+let venna = new Object();
+let vaniVenna = new Object();
+
+vaniVenna[vani] = 'Vani';
+vaniVenna[venna] = 'Venna';
+console.log(vaniVenna[vani]); => vaniVenna {
+vani: 'Vani';
+venna: 'Venna';
+}
+
+vaniVenna["[Object object]"] = 'Vani';
+vaniVenna["[Object object]"] = 'Venna';
+
+let arr = [1,5,8,2];
+arr.delete();
+arr.pop()->for
+arr.unshift()->for
+arr = [];
+arr.length = 0;
+
+
+:before, after, hover, focus, active, nth-chlid, fist-child, last-child, link
+::
+
+
+
+input[type="text"]
+
+$primaryColor: '#000';
+
+color: $primaryColor;
+
+
+
